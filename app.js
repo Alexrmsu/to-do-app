@@ -1,12 +1,15 @@
 require('colors');
 console.clear();
 
-const { showMenu } = require('./helpers/msg')
+const { showMenu, pause} = require('./helpers/msg')
 
 
 const main = async() => {
 
+
+
     showMenu();
+    pause();
 
 }
 
