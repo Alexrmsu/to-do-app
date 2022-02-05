@@ -29,14 +29,17 @@ const showMenu = () => {
 }
 
 const pause = () => {
-    const readLine = require('readline').createInterface({
-        input: process.stdin,
-        output: process.stdout
-    });
 
-    readLine.question(`\nPresione ${'Enter'.green} para continuar\n`, (opt) =>{
-        readLine.close();
-    });
+    return new Promise(resolve => {
+        const readLine = require('readline').createInterface({
+            input: process.stdin,
+            output: process.stdout
+        });
+
+        readLine.question(`\nPresione ${'Enter'.green} para continuar\n`, (opt) =>{
+            readLine.close();
+        });
+    })
 }
 
 module.exports = {
