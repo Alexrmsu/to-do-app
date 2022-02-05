@@ -20,7 +20,7 @@ const main = async() => {
         // console.log({opt});
         const tasks = new Tasks();
         const task = new Task('Comprar comida');
-        console.log(task);
+        console.log(tasks);
         await pause();
 
 
