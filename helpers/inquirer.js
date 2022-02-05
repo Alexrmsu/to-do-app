@@ -2,11 +2,12 @@ const inquirer = require('inquirer');
 require('colors');
 
 
+
 const questions = [
     {
         type: 'list',
-        name: 'Options',
-        message: '¿Que deseas hacer?',
+        name: 'Numero: ',
+        message: '¿Que deseas hacer?'.blue,
         choices: [
             {
                 value: '1',
@@ -41,24 +42,33 @@ const questions = [
 ]
 
 
-
-
-
-const inquirerMenu = async() => {
-
+const inquirerMenu = async () => {
 
 
     console.clear();
-    console.log('--------------------------'.green)
-    console.log('|  Seleccione una opcion |'.green)
-    console.log('--------------------------'.green)
+    console.log('--------------------------'.blue)
+    console.log('|  Seleccione una opcion |'.blue)
+    console.log('--------------------------'.blue)
 
-    const opt = await inquirer.prompt(questions);
+    const Options = await inquirer.prompt(questions);
 
-    return opt;
+    return Options;
 
 }
 
+const pause = async () => {
+    const question = [
+        {
+            type: 'input',
+            name: 'enter',
+            message: `Presione ${'enter'.red} para continuar`
+        }
+    ];
+    await inquirer.prompt(question);
+};
+
+
 module.exports = {
-    inquirerMenu
+    inquirerMenu,
+    pause
 }
